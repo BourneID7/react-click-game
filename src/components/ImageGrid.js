@@ -2,6 +2,18 @@ import React from "react";
 import ImageButton from "./ImageButton";
 import flowers from "../flower.json";
 
+function shuffleArray(array) {
+    let i = array.length - 1;
+    for (; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  }
+
+
 class ImageGrid extends React.Component {
 
     //set this.state.flowers to json array
@@ -10,6 +22,8 @@ class ImageGrid extends React.Component {
     };
 
     render() {
+        shuffleArray(flowers);
+
         return (
             <main className="container">
                 <div className="row">
@@ -20,6 +34,7 @@ class ImageGrid extends React.Component {
                                 key={flower.id}
                                 name={flower.name}
                                 image={flower.image}
+                                onClick={() => shuffleArray(flowers)}
                             />
                         </div>
                     ))}

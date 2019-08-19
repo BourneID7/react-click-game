@@ -5,14 +5,17 @@ import Jumbotron from "./components/Jumbotron";
 import ImageGrid from "./components/ImageGrid";
 import "./styles.css";
 
-function App() {
-  return (
-    <div>
-      <Navbar />
-      <Jumbotron />
-      <ImageGrid />
-    </div>
-  )
+class App extends React.Component {
+
+  render() {
+    return (
+      <div>
+        <Navbar />
+        <Jumbotron />
+        <ImageGrid />
+      </div>
+    )
+  }
 }
 
 export default App;
