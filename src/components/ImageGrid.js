@@ -2,6 +2,7 @@ import React from "react";
 import ImageButton from "./ImageButton";
 import flowers from "../flower.json";
 
+// random resort of items in array to change display order of flowers
 function shuffleArray(array) {
     let i = array.length - 1;
     for (; i > 0; i--) {
@@ -16,9 +17,25 @@ function shuffleArray(array) {
 
 class ImageGrid extends React.Component {
 
-    //set this.state.flowers to json array
+    //set this.state.flowers to json array; score to 0
     state = {
-        flowers
+        flowers,
+        score: 0,
+        guessMessage: "",
+        topScore: 0
+    };
+
+    // increase score by 1, reshuffle ImageButtons, display good guess message
+    handleGoodGuess = () => {
+        this.setState({ score: this.state.score + 1});
+        this.setState({ guessMessage: this.state.guessMessage})
+        shuffleArray(flowers);
+        console.log("score: ", this.state.score);
+    };
+
+    // reset score to 0
+    handleBadGuess = () => {
+        this.setState({ score: this.state.score === 0});
     };
 
     render() {
@@ -34,7 +51,8 @@ class ImageGrid extends React.Component {
                                 key={flower.id}
                                 name={flower.name}
                                 image={flower.image}
-                                onClick={() => shuffleArray(flowers)}
+                                handleGoodGuess={this.handleGoodGuess}
+                                handleBadGuess={this.handleBadGuess}
                             />
                         </div>
                     ))}
