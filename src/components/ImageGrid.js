@@ -22,21 +22,50 @@ class ImageGrid extends React.Component {
         flowers,
         score: 0,
         guessMessage: "",
-        topScore: 0
+        topScore: 0,
+        timesClicked: 0
     };
 
     // increase score by 1, reshuffle ImageButtons, display good guess message
     handleGoodGuess = () => {
-        this.setState({ score: this.state.score + 1});
-        this.setState({ guessMessage: this.state.guessMessage})
-        shuffleArray(flowers);
-        console.log("score: ", this.state.score);
+        this.setState({ 
+            score: this.state.score + 1, 
+            guessMessage: "Good!",
+            timesClicked: this.state.timesClicked + 1
+        }, () => {
+            shuffleArray(flowers);
+            console.log("score: ", this.state.score);
+            console.log("Guess: ", this.state.guessMessage);
+
+            if (this.state.score >= this.state.topScore) {
+                this.setState({ topScore: this.state.score}, () => {
+                    console.log("Top score: ", this.state.topScore);
+                });
+            };
+        });
     };
 
-    // reset score to 0
+    // reset score to 0, display game over message
     handleBadGuess = () => {
-        this.setState({ score: this.state.score === 0});
+        this.setState({ 
+            score: 0,
+            guessMessage: "Bad guess! Game over!",
+            timesClicked: 0
+        }, () => {
+            console.log("score: ", this.state.score);
+            console.log("Guess: ", this.state.guessMessage);
+        });
     };
+
+    // determine whether guess is good or bad & run appropriate function
+    handleGuess = () => {
+        if (this.state.timesClicked <= 1) {
+            this.handleGoodGuess();
+        } else {
+            this.handleBadGuess();
+        }
+        // this.setState({ guessMessage: "" });
+    }
 
     render() {
         shuffleArray(flowers);
@@ -45,14 +74,14 @@ class ImageGrid extends React.Component {
             <main className="container">
                 <div className="row">
                     {this.state.flowers.slice(0, 12).map(flower => (
-                        <div className="col-md-3">
+                        <div className="col-md-3" key={flower.id}>
                             <ImageButton
                                 id={flower.id}
-                                key={flower.id}
                                 name={flower.name}
                                 image={flower.image}
-                                handleGoodGuess={this.handleGoodGuess}
-                                handleBadGuess={this.handleBadGuess}
+                                timesClicked={this.state.timesClicked}
+                                handleGuess={this.handleGuess}
+                                // handleGoodGuess={this.handleGoodGuess}
                             />
                         </div>
                     ))}
