@@ -13,7 +13,8 @@ function shuffleArray(array) {
     }
     return array;
   }
-
+  
+const alreadyClickedArr = [];
 
 class ImageGrid extends React.Component {
 
@@ -23,7 +24,6 @@ class ImageGrid extends React.Component {
         score: 0,
         guessMessage: "",
         topScore: 0,
-        timesClicked: 0
     };
 
     // increase score by 1, reshuffle ImageButtons, display good guess message
@@ -58,13 +58,18 @@ class ImageGrid extends React.Component {
     };
 
     // determine whether guess is good or bad & run appropriate function
-    handleGuess = () => {
-        if (this.state.timesClicked <= 1) {
+    handleGuess = (id) => {
+        if (alreadyClickedArr.indexOf(id) === -1) {
             this.handleGoodGuess();
+            alreadyClickedArr.push(id);
+            console.log("button id clicked: ", id);
+            console.log("already clicked: ", alreadyClickedArr);
+
         } else {
             this.handleBadGuess();
+            console.log("button id clicked: ", id);
+
         }
-        // this.setState({ guessMessage: "" });
     }
 
     render() {
@@ -74,22 +79,18 @@ class ImageGrid extends React.Component {
             <main className="container">
                 <div className="row">
                     {this.state.flowers.slice(0, 12).map(flower => (
-                        <div className="col-md-3" key={flower.id}>
+                        <div className="col-md-3" key={flower.id} onClick={() => this.handleGuess(flower.id)}>
                             <ImageButton
                                 id={flower.id}
                                 name={flower.name}
                                 image={flower.image}
-                                timesClicked={this.state.timesClicked}
-                                handleGuess={this.handleGuess}
-                                // handleGoodGuess={this.handleGoodGuess}
                             />
                         </div>
                     ))}
                 </div>
             </main>
-        )
-    }
-
+        );
+    };
 }
 
 export default ImageGrid;
