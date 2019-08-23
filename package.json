@@ -13,8 +13,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "homepage": "https://bourneid7.github.io/react-click-game"
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "https://bourneid7.github.io/react-click-game",
   "eslintConfig": {
     "extends": "react-app"
   },
