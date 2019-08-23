@@ -10,7 +10,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar 
+          score={this.props.score}
+          topScore={this.props.topScore}
+          guessMessage={this.props.guessMessage}
+        />
         <Jumbotron />
         <ImageGrid />
       </div>
