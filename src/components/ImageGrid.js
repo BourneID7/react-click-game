@@ -39,6 +39,7 @@ class ImageGrid extends React.Component {
             if (this.state.score >= this.state.topScore) {
                 this.setState({ topScore: this.state.score}, () => {
                     console.log("Top score: ", this.state.topScore);
+                    this.sendData();
                 });
             };
         });
@@ -51,6 +52,7 @@ class ImageGrid extends React.Component {
             guessMessage: "Bad guess! Game over!",
         }, () => {
             alreadyClickedArr = [];
+            this.sendData();
             console.log("score: ", this.state.score);
             console.log("top score: ", this.state.topScore);
             console.log("Guess: ", this.state.guessMessage);
@@ -71,14 +73,12 @@ class ImageGrid extends React.Component {
     handleGuess = (id) => {
         if (alreadyClickedArr.indexOf(id) === -1) {
             this.handleGoodGuess();
-            // this.sendData();
             alreadyClickedArr.push(id);
             console.log("button id clicked: ", id);
             console.log("already clicked: ", alreadyClickedArr);
 
         } else {
             this.handleBadGuess();
-            // this.sendData();
             console.log("button id clicked: ", id);
             console.log("already clicked: ", alreadyClickedArr);
         };

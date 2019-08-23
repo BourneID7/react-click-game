@@ -28,13 +28,12 @@ class App extends React.Component {
     return (
       <div>
         <Navbar 
-          callbackFromParent={this.myCallback}
           score={this.state.scoreFromChild}
           topScore={this.state.topScoreFromChild}
           guessMessage={this.state.messageFromChild}
         />
         <Jumbotron />
-        <ImageGrid />
+        <ImageGrid callbackFromParent={this.myCallback}/>
       </div>
     )
   }
