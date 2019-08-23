@@ -7,22 +7,45 @@ body {
     padding: 0;
 }
 .scoreBar {
-    background: #5b0b22;
+    background-color: #5b0b22 !important;
     box-shadow: 0 5px 15px #000;
     width: 100%;
     position: fixed;
     top: 0;
     height: 70px;
 }
-.scoreText {
+.navbar .navbar-expand-lg .navbar-nav .nav-link .navbar-dark .navbar-nav {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #5b0b22 !important;
+    background: #5b0b22 !important;
+    color: rgba(255,255,255,1) !important;
+    font-size: 1.3rem;
+    font-weight: bold;
+    opacity: 1;
+}
+.nav-link a {
+    color: rgba(255,255,255,1) !important;
+}
+.nav-link:hover {
+    color: rgba(255,255,255,1) !important;
+}
+bg-dark {
+    background-color: #5b0b22 !important;
+}
+.navbar-brand {
+    font-weight: bold;
+}
+.scoreText  ul li {
     color: white;
-    font-size: 1.5rem;
-    padding: 15px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 1.3rem;
+    padding: 10px;
+    /* margin-left: auto;
+    margin-right: auto; */
     text-align: center;
-    list-style: none;
-};
+    list-style-type: none;
+    display: inline-block;
+}
 .centered {
     margin-left: auto;
     margin-right: auto;
@@ -49,9 +72,7 @@ body {
     text-align: center;
     text-shadow: 5px 5px 8px #000;
 }
-.container {
-    padding: 30px 100px;
-}
+
 .click-item {
     width: 160px;
     height: 160px;
@@ -61,3 +82,19 @@ body {
     margin-right: auto;
     margin-bottom: 20px;
 }
+
+@media screen and (max-width: 768px) {
+
+    .scoreBar {
+     height: 200px;
+   }
+   .jumbotron-fluid {
+       margin-top: 200px;
+   }
+   .scoreText {
+       padding: 5px;
+   }
+   .navbar-nav {
+    background-color: #5b0b22 !important;
+  }
+ }

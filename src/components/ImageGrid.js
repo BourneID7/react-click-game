@@ -33,13 +33,14 @@ class ImageGrid extends React.Component {
             guessMessage: "Good!"
         }, () => {
             shuffleArray(flowers);
+            this.sendData();
             console.log("score: ", this.state.score);
             console.log("Guess: ", this.state.guessMessage);
 
             if (this.state.score >= this.state.topScore) {
                 this.setState({ topScore: this.state.score}, () => {
-                    console.log("Top score: ", this.state.topScore);
                     this.sendData();
+                    console.log("Top score: ", this.state.topScore);
                 });
             };
         });
@@ -49,7 +50,7 @@ class ImageGrid extends React.Component {
     handleBadGuess = () => {
         this.setState({ 
             score: 0,
-            guessMessage: "Bad guess! Game over!",
+            guessMessage: "Wrong! Game over!",
         }, () => {
             alreadyClickedArr = [];
             this.sendData();
@@ -91,7 +92,7 @@ class ImageGrid extends React.Component {
             <main className="container">
                 <div className="row">
                     {this.state.flowers.slice(0, 12).map(flower => (
-                        <div className="col-md-3" key={flower.id} onClick={() => this.handleGuess(flower.id)}>
+                        <div className="col-lg-3 col-md-4 col-sm-6" key={flower.id} onClick={() => this.handleGuess(flower.id)}>
                             <ImageButton
                                 id={flower.id}
                                 name={flower.name}

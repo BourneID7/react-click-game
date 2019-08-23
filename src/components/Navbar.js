@@ -4,19 +4,22 @@ function Navbar (props) {
 
     return (
         <div className="container-fluid">
-            <div className="scoreBar">
-                <div className="row">
-                    <div className="col-md-4">
-                        <p className="scoreText"><strong>Flower Flitting</strong></p>
-                    </div>
-                    <div className="col-md-4">
-                        <p className="scoreText">Guess: {props.guessMessage}</p>
-                    </div>
-                    <div className="col-md-4">
-                        <p className="scoreText">Score: {props.score}| Top Score: {props.topScore}</p>
-                    </div>
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark scoreBar centered">
+                <a className="navbar-brand" href="#">Flower Flitting</a>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav">
+                        <li className="nav-item"> 
+                            <a className="nav-link" href="#">Guess: {props.guessMessage}</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Score: {props.score} | Top Score: {props.topScore}</a>
+                        </li>
+                    </ul>
                 </div>
-            </div>
+            </nav>
         </div>
     )
 
