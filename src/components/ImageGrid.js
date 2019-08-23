@@ -49,7 +49,6 @@ class ImageGrid extends React.Component {
         this.setState({ 
             score: 0,
             guessMessage: "Bad guess! Game over!",
-            timesClicked: 0
         }, () => {
             alreadyClickedArr = [];
             console.log("score: ", this.state.score);
@@ -58,21 +57,33 @@ class ImageGrid extends React.Component {
         });
     };
 
+    //pass score info back to parent
+    sendData = () => {
+        const scoreData = {
+            scoreFromChild: this.state.score,
+            topScoreFromChild: this.state.topScore,
+            messageFromChild: this.state.guessMessage
+        }
+        this.props.callbackFromParent(scoreData);
+    };    
+
     // determine whether guess is good or bad & run appropriate function
     handleGuess = (id) => {
         if (alreadyClickedArr.indexOf(id) === -1) {
             this.handleGoodGuess();
+            // this.sendData();
             alreadyClickedArr.push(id);
             console.log("button id clicked: ", id);
             console.log("already clicked: ", alreadyClickedArr);
 
         } else {
             this.handleBadGuess();
+            // this.sendData();
             console.log("button id clicked: ", id);
             console.log("already clicked: ", alreadyClickedArr);
-        }
-    }
-
+        };
+    };
+        
     render() {
         shuffleArray(flowers);
 

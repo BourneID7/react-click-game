@@ -7,13 +7,31 @@ import "./styles.css";
 
 class App extends React.Component {
 
+  constructor(props) { 
+    super(props);
+    this.state = {
+      scoreFromChild: null, 
+      topScoreFromChild: null, 
+      messageFromChild: null 
+    };
+  };
+
+  myCallback = (scoreData) => {
+    this.setState({ 
+      scoreFromChild: scoreData.scoreFromChild,
+      topScoreFromChild: scoreData.topScoreFromChild,
+      messageFromChild: scoreData.messageFromChild
+      });
+  };
+
   render() {
     return (
       <div>
         <Navbar 
-          score={this.props.score}
-          topScore={this.props.topScore}
-          guessMessage={this.props.guessMessage}
+          callbackFromParent={this.myCallback}
+          score={this.state.scoreFromChild}
+          topScore={this.state.topScoreFromChild}
+          guessMessage={this.state.messageFromChild}
         />
         <Jumbotron />
         <ImageGrid />
