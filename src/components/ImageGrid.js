@@ -14,7 +14,7 @@ function shuffleArray(array) {
     return array;
   }
   
-const alreadyClickedArr = [];
+let alreadyClickedArr = [];
 
 class ImageGrid extends React.Component {
 
@@ -30,8 +30,7 @@ class ImageGrid extends React.Component {
     handleGoodGuess = () => {
         this.setState({ 
             score: this.state.score + 1, 
-            guessMessage: "Good!",
-            timesClicked: this.state.timesClicked + 1
+            guessMessage: "Good!"
         }, () => {
             shuffleArray(flowers);
             console.log("score: ", this.state.score);
@@ -52,7 +51,9 @@ class ImageGrid extends React.Component {
             guessMessage: "Bad guess! Game over!",
             timesClicked: 0
         }, () => {
+            alreadyClickedArr = [];
             console.log("score: ", this.state.score);
+            console.log("top score: ", this.state.topScore);
             console.log("Guess: ", this.state.guessMessage);
         });
     };
@@ -68,7 +69,7 @@ class ImageGrid extends React.Component {
         } else {
             this.handleBadGuess();
             console.log("button id clicked: ", id);
-
+            console.log("already clicked: ", alreadyClickedArr);
         }
     }
 
