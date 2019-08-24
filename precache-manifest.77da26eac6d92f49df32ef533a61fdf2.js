@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1b71e4a506f700e091b1fdaa4a4ef52c",
+    "revision": "a22295efba0ff0b8f30e54c8bc0a9315",
     "url": "/react-click-game/index.html"
   },
   {
-    "revision": "f2b0f44db8a54b515213",
+    "revision": "57dd004509ef60843bbf",
     "url": "/react-click-game/static/css/main.b51d14c1.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-click-game/static/js/2.75700cc7.chunk.js"
   },
   {
-    "revision": "f2b0f44db8a54b515213",
-    "url": "/react-click-game/static/js/main.a3b6dfdc.chunk.js"
+    "revision": "57dd004509ef60843bbf",
+    "url": "/react-click-game/static/js/main.dd3a3d6f.chunk.js"
   },
   {
     "revision": "b123e1ebc39a2dc5b258",
