@@ -12,10 +12,10 @@ function Navbar (props) {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item"> 
-                            <a className="nav-link" href="#">Guess: {props.guessMessage}</a>
+                            <a className="nav-link" href="#">Guess: {(props.guessMessage ? props.guessMessage : "Click any flower to start")}</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Score: {props.score} | Top Score: {props.topScore}</a>
+                            <a className="nav-link" href="#">Score: {(props.score ? props.score : 0)} | Top Score: {(props.topScore ? props.topScore : 0)}</a>
                         </li>
                     </ul>
                 </div>
