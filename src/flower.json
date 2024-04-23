@@ -2,106 +2,106 @@
     {
         "id": 1,
         "name": "bleeding hearts",
-        "image": "./images/bleeding-hearts.png"
+        "image": "/react-click-game/images/bleeding-hearts.png"
     },
     {
         "id": 2,
         "name": "campanula",
-        "image": "./images/campanula.png"
+        "image": "/react-click-game/images/campanula.png"
     },
     {
         "id": 3,
         "name": "crocus",
-        "image": "./images/crocus.png"
+        "image": "/react-click-game/images/crocus.png"
     },
     {
         "id": 4,
         "name": "evening primrose",
-        "image": "./images/evening-primrose.png"
+        "image": "/react-click-game/images/evening-primrose.png"
     },
     {
         "id": 5,
         "name": "forsythia",
-        "image": "./images/forsythia.png"
+        "image": "/react-click-game/images/forsythia.png"
     },
     {
         "id": 6,
         "name": "hyacinth",
-        "image": "./images/hyacinth.png"
+        "image": "/react-click-game/images/hyacinth.png"
     },
     {
         "id": 7,
         "name": "lilac",
-        "image": "./images/lilac.png"
+        "image": "/react-click-game/images/lilac.png"
     },
     {
         "id": 8,
         "name": "orange day lily",
-        "image": "./images/lily-orange.png"
+        "image": "/react-click-game/images/lily-orange.png"
     },
     {
         "id": 9,
         "name": "pink day lily",
-        "image": "./images/lily-pink.png"
+        "image": "/react-click-game/images/lily-pink.png"
     },
     {
         "id": 10,
         "name": "yellow day lily",
-        "image": "./images/lily-yellow.png"
+        "image": "/react-click-game/images/lily-yellow.png"
     },
     {
         "id": 11,
         "name": "loosestrafe",
-        "image": "./images/loosestrafe.png"
+        "image": "/react-click-game/images/loosestrafe.png"
     },
     {
         "id": 12,
         "name": "peony",
-        "image": "./images/peony-2.png"
+        "image": "/react-click-game/images/peony-2.png"
     },
     {
         "id": 13,
         "name": "dark pink peony",
-        "image": "./images/peony-darkpink.png"
+        "image": "/react-click-game/images/peony-darkpink.png"
     },
     {
         "id": 14,
         "name": "light pink peony",
-        "image": "./images/peony-lightpink.png"
+        "image": "/react-click-game/images/peony-lightpink.png"
     },
     {
         "id": 15,
         "name": "pink rose",
-        "image": "./images/rose-pink.png"
+        "image": "/react-click-game/images/rose-pink.png"
     },
     {
         "id": 16,
         "name": "red rose",
-        "image": "./images/rose-red.png"
+        "image": "/react-click-game/images/rose-red.png"
     },
     {
         "id": 17,
         "name": "salvia",
-        "image": "./images/salvia.png"
+        "image": "/react-click-game/images/salvia.png"
     },
     {
         "id": 18,
         "name": "purple spiderwort",
-        "image": "./images/spiderwort-purple.png"
+        "image": "/react-click-game/images/spiderwort-purple.png"
     },
     {
         "id": 19,
         "name": "white spiderwort",
-        "image": "./images/spiderwort-white.png"
+        "image": "/react-click-game/images/spiderwort-white.png"
     },
     {
         "id": 20,
         "name": "tulip",
-        "image": "./images/tulip.png"
+        "image": "/react-click-game/images/tulip.png"
     },
     {
         "id": 21,
         "name": "yucca",
-        "image": "./images/yucca.png"
+        "image": "/react-click-game/images/yucca.png"
     }
 ]
