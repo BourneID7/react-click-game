@@ -1,42 +1,32 @@
-import React from 'react';
+import { useState } from 'react';
 import './App.css';
 import Navbar from "./components/Navbar";
 import Jumbotron from "./components/Jumbotron";
 import ImageGrid from "./components/ImageGrid";
 import "./styles.css";
 
-class App extends React.Component {
+const App = () => {
+  const [scoreFromChild, setScoreFromChild] = useState(0);
+  const [topScoreFromChild, setTopScoreFromChild] = useState(0);
+  const [messageFromChild, setMessageFromChild] = useState('');
 
-  constructor(props) { 
-    super(props);
-    this.state = {
-      scoreFromChild: null, 
-      topScoreFromChild: null, 
-      messageFromChild: null 
-    };
+  const myCallback = (scoreData) => {
+    setScoreFromChild(scoreData.scoreFromChild);
+    setTopScoreFromChild(scoreData.topScoreFromChild);
+    setMessageFromChild(scoreData.messageFromChild);
   };
 
-  myCallback = (scoreData) => {
-    this.setState({ 
-      scoreFromChild: scoreData.scoreFromChild,
-      topScoreFromChild: scoreData.topScoreFromChild,
-      messageFromChild: scoreData.messageFromChild
-      });
-  };
-
-  render() {
-    return (
-      <div>
-        <Navbar 
-          score={this.state.scoreFromChild}
-          topScore={this.state.topScoreFromChild}
-          guessMessage={this.state.messageFromChild}
-        />
-        <Jumbotron />
-        <ImageGrid callbackFromParent={this.myCallback}/>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <Navbar 
+        score={scoreFromChild}
+        topScore={topScoreFromChild}
+        guessMessage={messageFromChild}
+      />
+      <Jumbotron />
+      <ImageGrid callbackFromParent={myCallback} />
+    </div>
+  )
 }
 
 export default App;
